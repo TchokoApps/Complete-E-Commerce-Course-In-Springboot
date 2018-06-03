@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.tchoko.springboot.bookstore.service.UserSecurityService;
+import com.tchoko.springboot.bookstore.utility.SecurityUtility;
 
 @Configuration
 @EnableWebSecurity
@@ -29,9 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	private static final String[] PUBLIC_MATCHERS = { "/css/**", "/js/**", "/image/**", "/", "/newUser", "/forgetPassword", "/login", "/fonts/**",
-			"/bookshelf", "/bookDetail/**", "/hours", "/faq", "/searchByCategory", "/searchBook"
-
-	};
+			"/bookshelf", "/bookDetail/**", "/hours", "/faq", "/searchByCategory", "/searchBook" };
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
